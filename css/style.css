@@ -45,6 +45,7 @@ header {
   position: fixed;
   top: 0;
   width: 100vw;
+  z-index: 1;
 }
 
 .menu ul {
@@ -59,6 +60,14 @@ header {
 .menu a {
   display: block;
   padding: 20px;
+  transition: background-color 2s, color 2s;
+  /*transition: quais propriedades quero que mude e o tempo da transição, precisa de um gatilho no caso é o hover*/
+}
+
+.menu a:hover, .menu a:active {
+  background-color: teal;
+  color: white;
+  text-decoration: none;
 }
 
 a {
@@ -69,6 +78,19 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+.titulo {
+  transform: scale(0.2) translateY(50vh);
+  opacity: 0; /*colocar transparencia 0 transparente a 1 opaco*/
+  animation: linear 2s animacaoTitulo forwards;
+}
+
+@keyframes animacaoTitulo {
+  100% {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+  }
+} /*Pode ser de 0% a 100% ou  from- to*/
 
 .site-title, .site-subtitle {
   color: whitesmoke;
@@ -87,12 +109,12 @@ a:hover {
   font-weight: 300;
 }
 
-.portfolio {
+.portfolio , .contato {
   padding: 2em; /* empurrão dos elementos para dentro */
-  height: 100vh;
+  min-height: 100vh; /*altura minima*/
 }
 
-.portfolio h2 {
+.portfolio h2, .contato h2 {
   color: whitesmoke;
   font-family: 'Prompt', sans-serif;
   font-weight: 500;
@@ -128,6 +150,11 @@ a:hover {
   width: 240px;
   object-fit: cover;
   object-position: center bottom; /* alinhamento da img na caixa */
+  transition: transform 500ms ;
+}
+
+.img-portfolio:hover {
+  transform: scale(1.2); /*muda a escala da foto, no caso aumenta, no momento que o mouse está em cima*/
 }
 
 @media( min-width: 1200px ) {
@@ -136,3 +163,21 @@ a:hover {
     width: 240px;
   }
 }
+
+.contato .icons {
+  text-align: center;
+}
+.contato a {
+  color: whitesmoke;
+  font-size: 4em;
+  transition: text-shadow 1s;
+}
+
+.contato a:hover, .contato a:active {
+  text-decoration: none;
+  text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.5); 
+  /* text-shadow: x y borrado cor ; aplicar sombra */
+  /* rgba(red, green, blue, transparencia de 0 a 1); */
+}
+
+
