@@ -1,13 +1,50 @@
+/* Reset do CSS   */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} 
+
 body {
   /* background-color: #d5dbdb; */
-  background-image: url("https://img.freepik.com/fotos-gratis/cinzento-vazio-circulo-modelo-borrao_1258-160.jpg?size=338&ext=jpg");
+  background-image: url("../img/backgroundTexturaMetalica.jpg");
   background-size: auto 100vh;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Oswald', sans-serif;
+  font-size: 12px;
   height: 100vh;
+}
+
+/*tamanho minimo para carregar estilos*/
+@media( min-width: 400px ) {
+  body {
+    font-size: 14px;
+  }
+}
+
+@media( min-width: 600px ) {
+  body {
+    font-size: 18px;
+  }
+}
+
+@media( min-width: 1200px ) {
+  body {
+    font-size: 18px;
+  }
+}
+
+header {
+  height: 100vh;
+  display: flex;
+  justify-content: center; /*alinhamento horizontal*/
+  align-items: center; /*alinhamento veritical*/
 }
 
 .menu {
   background-color: white;
+  position: fixed;
+  top: 0;
+  width: 100vw;
 }
 
 .menu ul {
@@ -17,6 +54,11 @@ body {
 
 .menu li {
   list-style: none;
+}
+
+.menu a {
+  display: block;
+  padding: 20px;
 }
 
 a {
@@ -33,6 +75,64 @@ a:hover {
   text-align: center;
 }
 
+.site-title {
+  font-family:'Work Sans', sans-serif;
+  font-size: 4em; /* em - unidade relativa ao valor da fonte do body */
+  /* line-height: 1.8em; altura de linha */
+}
+
 .site-subtitle {
-  font-style: italic;
+  /* font-style: italic; */
+  font-family: 'Prompt', sans-serif;
+  font-weight: 300;
+}
+
+.portfolio {
+  padding: 2em; /* empurrão dos elementos para dentro */
+  height: 100vh;
+}
+
+.portfolio h2 {
+  color: whitesmoke;
+  font-family: 'Prompt', sans-serif;
+  font-weight: 500;
+  margin-bottom: 1em;
+}
+
+.portfolio .grid {
+  display: grid; /* O grid é para maior controle das colunas flex colunas automaticas */
+  gap: 2em; /*espaçamento das colunas*/
+} /* Os elementos podem ser alinhados com propriedades do grid ou texto */ 
+
+@media( min-width: 560px ) {
+  .portfolio .grid {
+    grid-template-columns: 240px 240px;
+  }
+}
+
+@media( min-width: 880px ) {
+  .portfolio .grid {
+    grid-template-columns: repeat( 3, 260px );/* repeat(3, 260px) = 260px 260px 260px no valor  */
+    align-content: center;
+    justify-content: center;
+  }
+}
+
+.portfolio figure {
+  color: whitesmoke;
+  text-align: center; /*alinhamento vertical*/
+}
+
+.img-portfolio {
+  height: 180px;
+  width: 240px;
+  object-fit: cover;
+  object-position: center bottom; /* alinhamento da img na caixa */
+}
+
+@media( min-width: 1200px ) {
+  .img-portfolio {
+    height: 180px;
+    width: 240px;
+  }
 }
