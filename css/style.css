@@ -14,7 +14,7 @@ body {
   height: 100vh;
 }
 
-/*tamanho minimo para carregar estilos*/
+/*tamanho minimo para carregar estilos, pode ser de width ou height*/
 @media( min-width: 400px ) {
   body {
     font-size: 14px;
@@ -93,6 +93,7 @@ a:hover {
 } /*Pode ser de 0% a 100% ou  from- to*/
 
 .site-title, .site-subtitle {
+
   color: whitesmoke;
   text-align: center;
 }
@@ -109,16 +110,50 @@ a:hover {
   font-weight: 300;
 }
 
-.portfolio , .contato {
+.sobre, .portfolio , .contato {
   padding: 2em; /* empurrão dos elementos para dentro */
   min-height: 100vh; /*altura minima*/
 }
+@media( min-width: 1200px ) {
+  .container {
+   max-width: 1200px;
+   margin-left: auto;
+   margin-right: auto;
+  }
+}
 
-.portfolio h2, .contato h2 {
+.sobre h2, .portfolio h2, .contato h2 {
   color: whitesmoke;
   font-family: 'Prompt', sans-serif;
   font-weight: 500;
   margin-bottom: 1em;
+}
+
+.sobre p {
+  color: whitesmoke;
+  font-family: 'Prompt', sans-serif;
+  font-weight: 100;
+  margin-bottom: 1em;
+  text-align: justify;
+}
+
+.sobre a {
+  color: #2a7ae4 ;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.sobre a:hover {
+  text-decoration: none;
+}
+
+.sobre .avatar {
+  float: right; /*coloca o texto envolta da foto*/
+  margin-left: 2em;
+}
+
+.sobre .avatar img {
+  clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%);
 }
 
 .portfolio .grid {
@@ -140,22 +175,63 @@ a:hover {
   }
 }
 
+.flip-card {
+  background-color: rgb(226, 43, 43);
+  height: 180px;
+  perspective: 1000px;
+}
+
+.flip-card:hover .card {
+  transform: rotateY(180deg);
+}
+
+.card {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transforme 3s;
+}
+
+.card-front, 
+.card-back {
+  backface-visibility: hidden;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.card-back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: aliceblue;
+  height: 180px;
+  width: 100%;
+  transform: rotateY(180deg);
+}
+
+.card-back h3 {
+  color: black;
+} 
+/* 
+*/
+
 .portfolio figure {
-  color: whitesmoke;
+  /* color: whitesmoke; */
   text-align: center; /*alinhamento vertical*/
 }
 
 .img-portfolio {
   height: 180px;
-  width: 240px;
+  width: 100%;
   object-fit: cover;
-  object-position: center bottom; /* alinhamento da img na caixa */
+  object-position: left bottom; /* alinhamento da img na caixa */
   transition: transform 500ms ;
 }
 
-.img-portfolio:hover {
-  transform: scale(1.2); /*muda a escala da foto, no caso aumenta, no momento que o mouse está em cima*/
-}
+/* .img-portfolio:hover {
+  transform: scale(1.2); /*muda a escala da foto, no caso aumenta, no momento que o mouse está em cima
+} */
 
 @media( min-width: 1200px ) {
   .img-portfolio {
