@@ -15,9 +15,13 @@ body {
 }
 
 /*tamanho minimo para carregar estilos, pode ser de width ou height*/
-@media( min-width: 400px ) {
+@media( min-width: 400px) {
   body {
     font-size: 14px;
+  }
+  
+  .logo {
+    margin-top: 2px;s
   }
 }
 
@@ -50,7 +54,7 @@ header {
 
 .menu ul {
   display: flex;
-  justify-content: space-around;
+  justify-content: right;  
 }
 
 .menu li {
@@ -64,12 +68,6 @@ header {
   /*transition: quais propriedades quero que mude e o tempo da transição, precisa de um gatilho no caso é o hover*/
 }
 
-.menu a:hover, .menu a:active {
-  background-color: teal;
-  color: white;
-  text-decoration: none;
-}
-
 a {
   text-decoration: none;
   color: teal;
@@ -77,6 +75,19 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+.menu a:hover, .menu:active {
+  background-color: teal ;
+  color: white;
+  text-decoration: none;
+}
+
+@media( min-width: 300px ) {
+  .menu {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .titulo {
@@ -93,7 +104,6 @@ a:hover {
 } /*Pode ser de 0% a 100% ou  from- to*/
 
 .site-title, .site-subtitle {
-
   color: whitesmoke;
   text-align: center;
 }
@@ -148,12 +158,14 @@ a:hover {
 }
 
 .sobre .avatar {
-  float: right; /*coloca o texto envolta da foto*/
-  margin-left: 2em;
+  float: left; /*coloca o texto envolta da foto*/
+  margin-right: 2em;
 }
 
 .sobre .avatar img {
-  clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%);
+  clip-path: circle();
+  width: 200px;
+  height: 200px;
 }
 
 .portfolio .grid {
@@ -209,11 +221,14 @@ a:hover {
   transform: rotateY(180deg);
 }
 
-.card-back h3 {
+.card-back p {
   color: black;
+  font-family: sans-serif;
+  font-size: 12px;
+  padding: 10px;
+  text-align: justify;
 } 
-/* 
-*/
+
 
 .portfolio figure {
   /* color: whitesmoke; */
