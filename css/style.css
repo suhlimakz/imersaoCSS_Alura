@@ -176,7 +176,6 @@ a:hover {
 }
 
 .flip-card {
-  background-color: rgb(226, 43, 43);
   height: 180px;
   perspective: 1000px;
 }
@@ -188,7 +187,7 @@ a:hover {
 .card {
   position: relative;
   transform-style: preserve-3d;
-  transition: transforme 3s;
+  transition: transform 3s;
 }
 
 .card-front, 
@@ -225,11 +224,11 @@ a:hover {
   height: 180px;
   width: 100%;
   object-fit: cover;
-  object-position: left bottom; /* alinhamento da img na caixa */
+  object-position: center bottom; /* alinhamento da img na caixa */
   transition: transform 500ms ;
 }
-
-/* .img-portfolio:hover {
+/* 
+.img-portfolio:hover {
   transform: scale(1.2); /*muda a escala da foto, no caso aumenta, no momento que o mouse está em cima
 } */
 
